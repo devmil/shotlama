@@ -34,7 +34,7 @@
     if (window.LamaAntics) {
       antics = LamaAntics.attach(lama, {
         base: "assets/lama/",
-        colors: ["#8F88FF", "#FFC2DA", "#B0ABFF", "#FFF8EB"],
+        colors: ["#E977BB", "#B8338F", "#EFA7D2", "#FFF8EB"],
         taps: {
           capture: async (antic) => {
             await antic.move("hop");
