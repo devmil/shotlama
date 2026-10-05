@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShotLama · Capture a moment. Make your point.</title>
+  <meta name="description" content="ShotLama is a screenshot tool for macOS, Windows and Linux. Capture an area, a window or a display, then copy, save, pin or annotate it from a small card.">
+  <link rel="canonical" href="https://devmil.de/shotlama/">
+  <meta name="theme-color" content="#ECECF1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F0F14" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://devmil.de/shotlama/">
+  <meta property="og:title" content="ShotLama · Capture a moment. Make your point.">
+  <meta property="og:description" content="A screenshot tool for macOS, Windows and Linux. Capture, annotate and share, with everything kept on your computer.">
+  <meta property="og:image" content="https://devmil.de/shotlama/assets/feature-graphic.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="500">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://devmil.de/shotlama/assets/feature-graphic.png">
+  <link rel="icon" href="assets/brand/icon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/brand/icon-256.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/lama/lama-antics.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ShotLama","url":"https://devmil.de/shotlama/","applicationCategory":"MultimediaApplication","operatingSystem":"macOS, Windows, Linux","description":"A screenshot tool for macOS, Windows and Linux.","author":{"@type":"Organization","name":"Devmil Solutions"}}</script>
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="releases.js" defer></script>
+  <script src="assets/lama/lama-antics.js" defer></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="ShotLama home"><img src="assets/brand/icon-64.png" width="30" height="30" alt="">ShotLama</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#flow">How it works</a>
+      <a href="#annotate">Annotate</a>
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#download">Download</a>
+    </nav>
+    <a id="header-release" class="header-release" href="#download"><span class="pulse" aria-hidden="true"></span><span>In development</span></a>
+  </header>
+
+  <main id="main">
+    <!-- The hero is a small screen. The Lama stands in the crop corners of
+         the app icon. site.js runs the capture flow on it: the screen dims,
+         a selection is drawn, the shutter flashes and the capture lands in a
+         Quick Access card. Visitors can drag their own selection. -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div id="stage" class="stage">
+        <div id="stage-content" class="stage-content">
+          <div class="sky" aria-hidden="true">
+            <svg class="stars" viewBox="0 0 1200 680" preserveAspectRatio="xMidYMid slice" focusable="false"><g fill="#E9E7FF"><circle cx="1069" cy="424" r="0.8" opacity="0.49"/><circle cx="593" cy="178" r="1.1" opacity="0.40"/><circle cx="569" cy="112" r="0.6" opacity="0.24"/><circle cx="859" cy="258" r="1.1" opacity="0.43"/><circle cx="822" cy="140" r="1.1" opacity="0.17"/><circle cx="402" cy="154" r="1.1" opacity="0.34"/><circle cx="430" cy="338" r="1.1" opacity="0.19"/><circle cx="141" cy="316" r="0.8" opacity="0.18"/><circle cx="970" cy="655" r="1.1" opacity="0.20"/><circle cx="836" cy="518" r="0.8" opacity="0.16"/><circle cx="762" cy="585" r="0.6" opacity="0.46"/><circle cx="726" cy="51" r="0.8" opacity="0.28"/><circle cx="10" cy="415" r="0.6" opacity="0.19"/><circle cx="437" cy="254" r="1.1" opacity="0.49"/><circle cx="119" cy="273" r="0.6" opacity="0.43"/><circle cx="394" cy="618" r="1.1" opacity="0.34"/><circle cx="265" cy="256" r="1.1" opacity="0.26"/><circle cx="712" cy="326" r="0.6" opacity="0.27"/><circle cx="1177" cy="592" r="0.8" opacity="0.27"/><circle cx="103" cy="356" r="0.6" opacity="0.31"/><circle cx="558" cy="485" r="1.1" opacity="0.17"/><circle cx="406" cy="317" r="0.8" opacity="0.18"/><circle cx="993" cy="21" r="1.1" opacity="0.35"/><circle cx="283" cy="412" r="0.8" opacity="0.41"/><circle cx="801" cy="187" r="0.6" opacity="0.50"/><circle cx="308" cy="113" r="0.6" opacity="0.17"/><circle cx="1099" cy="312" r="0.8" opacity="0.43"/><circle cx="101" cy="165" r="0.8" opacity="0.18"/><circle cx="638" cy="256" r="1.1" opacity="0.50"/><circle cx="983" cy="76" r="1.1" opacity="0.18"/><circle cx="495" cy="230" r="1.1" opacity="0.49"/><circle cx="1179" cy="167" r="0.8" opacity="0.17"/><circle cx="996" cy="600" r="0.8" opacity="0.44"/><circle cx="455" cy="567" r="0.8" opacity="0.33"/><circle cx="911" cy="79" r="0.8" opacity="0.41"/><circle cx="469" cy="494" r="0.8" opacity="0.44"/><circle cx="745" cy="612" r="0.6" opacity="0.49"/><circle cx="1183" cy="581" r="1.1" opacity="0.30"/><circle cx="673" cy="592" r="0.6" opacity="0.48"/><circle cx="1138" cy="236" r="1.1" opacity="0.26"/><circle cx="352" cy="216" r="0.8" opacity="0.30"/><circle cx="919" cy="605" r="0.6" opacity="0.33"/><circle cx="1071" cy="10" r="0.6" opacity="0.48"/><circle cx="1133" cy="183" r="0.8" opacity="0.31"/><circle cx="1032" cy="140" r="1.1" opacity="0.34"/><circle cx="927" cy="12" r="0.8" opacity="0.24"/><circle cx="16" cy="478" r="0.8" opacity="0.41"/><circle cx="432" cy="53" r="0.8" opacity="0.18"/><circle cx="31" cy="28" r="0.6" opacity="0.32"/><circle cx="617" cy="626" r="0.6" opacity="0.50"/><circle cx="202" cy="26" r="0.8" opacity="0.34"/><circle cx="454" cy="664" r="0.6" opacity="0.45"/><circle cx="251" cy="438" r="0.6" opacity="0.41"/><circle cx="122" cy="192" r="1.1" opacity="0.24"/><circle cx="730" cy="355" r="1.1" opacity="0.35"/><circle cx="853" cy="415" r="0.6" opacity="0.33"/><circle cx="694" cy="82" r="1.1" opacity="0.44"/><circle cx="68" cy="641" r="1.1" opacity="0.45"/><circle cx="666" cy="329" r="0.6" opacity="0.27"/><circle cx="1102" cy="249" r="0.8" opacity="0.44"/><circle cx="906" cy="127" r="0.8" opacity="0.24"/><circle cx="861" cy="317" r="1.1" opacity="0.22"/><circle cx="748" cy="131" r="0.6" opacity="0.33"/><circle cx="1171" cy="155" r="0.8" opacity="0.18"/><circle cx="896" cy="540" r="0.8" opacity="0.42"/><circle cx="315" cy="679" r="1.1" opacity="0.20"/><circle cx="1095" cy="324" r="0.8" opacity="0.43"/><circle cx="576" cy="416" r="0.6" opacity="0.37"/><circle cx="345" cy="154" r="0.6" opacity="0.30"/><circle cx="658" cy="553" r="0.8" opacity="0.41"/><circle cx="263" cy="295" r="0.6" opacity="0.32"/><circle cx="1028" cy="195" r="0.8" opacity="0.15"/><circle cx="250" cy="343" r="0.8" opacity="0.18"/><circle cx="177" cy="527" r="0.8" opacity="0.24"/><circle cx="144" cy="303" r="0.6" opacity="0.25"/><circle cx="947" cy="329" r="0.6" opacity="0.49"/><circle cx="544" cy="315" r="0.8" opacity="0.45"/><circle cx="1177" cy="526" r="1.1" opacity="0.20"/><circle cx="213" cy="669" r="1.1" opacity="0.42"/><circle cx="527" cy="242" r="0.6" opacity="0.22"/><circle cx="756" cy="446" r="0.8" opacity="0.24"/><circle cx="161" cy="315" r="0.8" opacity="0.49"/><circle cx="416" cy="323" r="0.6" opacity="0.16"/><circle cx="1165" cy="596" r="0.6" opacity="0.27"/><circle cx="1007" cy="413" r="0.8" opacity="0.36"/><circle cx="619" cy="460" r="0.6" opacity="0.41"/><circle cx="436" cy="193" r="0.6" opacity="0.45"/><circle cx="401" cy="235" r="1.1" opacity="0.44"/><circle cx="146" cy="466" r="1.1" opacity="0.22"/><circle cx="1025" cy="128" r="1.1" opacity="0.32"/><circle cx="904" cy="661" r="0.6" opacity="0.20"/><circle cx="892" cy="403" r="0.6" opacity="0.39"/><circle cx="775" cy="497" r="0.8" opacity="0.45"/><circle cx="489" cy="334" r="0.8" opacity="0.48"/><circle cx="355" cy="504" r="0.6" opacity="0.32"/><circle cx="832" cy="666" r="0.8" opacity="0.18"/><circle cx="376" cy="508" r="0.6" opacity="0.24"/><circle cx="264" cy="203" r="0.6" opacity="0.24"/><circle cx="73" cy="127" r="0.8" opacity="0.30"/><circle cx="179" cy="303" r="1.1" opacity="0.38"/><circle cx="1088" cy="318" r="1.1" opacity="0.28"/><circle cx="539" cy="576" r="0.6" opacity="0.42"/><circle cx="63" cy="549" r="0.8" opacity="0.34"/><circle cx="146" cy="56" r="0.8" opacity="0.25"/><circle cx="719" cy="493" r="0.6" opacity="0.42"/><circle cx="220" cy="44" r="0.8" opacity="0.28"/><circle cx="914" cy="337" r="0.8" opacity="0.28"/><circle cx="449" cy="8" r="1.1" opacity="0.43"/><circle cx="232" cy="356" r="1.1" opacity="0.43"/><circle cx="782" cy="117" r="1.1" opacity="0.35"/></g></svg>
+          </div>
+          <div class="hero-copy">
+            <p class="eyebrow">Screenshots for macOS, Windows and Linux</p>
+            <h1 id="hero-title">Capture a moment.<br><span>Make your point.</span></h1>
+            <p class="intro">ShotLama waits in your menu bar or tray. Press a shortcut, select what you want to show, and the capture lands in a small card, ready to copy, save, drag into another app or annotate.</p>
+            <div class="actions">
+              <a id="hero-download" class="button primary" href="#download"><span class="icon" style="--icon:url(assets/icons/download.svg)"></span><span>Get ShotLama</span></a>
+              <a class="button ghost" href="#flow">How it works</a>
+            </div>
+            <ul class="hero-facts" aria-label="Status">
+              <li><span class="dot" aria-hidden="true"></span>In development</li>
+              <li>macOS first, then Windows and Linux</li>
+              <li>No account, no cloud</li>
+            </ul>
+          </div>
+          <div class="hero-scene" aria-hidden="true">
+            <div class="glow"></div>
+            <div class="crop-frame">
+              <svg class="corners" viewBox="0 0 100 100" focusable="false"><path class="corner tl" d="M4 24V12a8 8 0 0 1 8-8h12"/><path class="corner tr" d="M76 4h12a8 8 0 0 1 8 8v12"/><path class="corner bl" d="M4 76v12a8 8 0 0 0 8 8h12"/><path class="corner br" d="M76 96h12a8 8 0 0 0 8-8V76"/></svg>
+              <div id="hero-lama" class="hero-lama is-hello">
+                <img class="pose proud" src="assets/lama/lama-proud.svg" width="240" height="240" alt="" draggable="false">
+                <img class="pose hello" src="assets/lama/lama-standing-nod.svg" width="240" height="240" alt="" draggable="false">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="capture-layer" class="capture-layer" aria-hidden="true">
+          <div class="dim"></div>
+          <div class="selection"><i class="h n"></i><i class="h ne"></i><i class="h e"></i><i class="h se"></i><i class="h s"></i><i class="h sw"></i><i class="h w"></i><i class="h nw"></i><span class="dimensions mono"></span></div>
+          <div class="crosshair"></div>
+          <div class="loupe"><div class="lens"></div><span class="coords mono"></span></div>
+          <div class="capture-bar">
+            <span class="seg primary"><span class="icon" style="--icon:url(assets/icons/camera.svg)"></span>Screenshot<kbd>⏎</kbd></span>
+            <span class="seg"><span class="icon" style="--icon:url(assets/icons/scan-text.svg)"></span>Text</span>
+            <span class="rule"></span>
+            <span class="seg"><span class="icon" style="--icon:url(assets/icons/timer.svg)"></span></span>
+            <span class="seg"><span class="icon" style="--icon:url(assets/icons/pen-line.svg)"></span></span>
+            <span class="seg"><span class="icon" style="--icon:url(assets/icons/pin.svg)"></span></span>
+            <span class="rule"></span>
+            <span class="seg"><span class="icon" style="--icon:url(assets/icons/x.svg)"></span></span>
+          </div>
+          <div class="flash"></div>
+        </div>
+
+        <div id="qa-stack" class="qa-stack" role="region" aria-label="Quick Access cards (a model of the app)"></div>
+
+        <div class="stage-hint">
+          <button id="capture-demo" type="button" class="button veil small"><span class="icon" style="--icon:url(assets/icons/square-dashed.svg)"></span>Take a capture</button>
+          <span class="hint-pointer">or drag across this area</span>
+        </div>
+        <p id="stage-status" class="visually-hidden" role="status" aria-live="polite"></p>
+      </div>
+      <template id="qa-card-template">
+        <article class="qa-card" tabindex="0">
+          <div class="qa-frame">
+            <div class="qa-thumb"></div>
+            <div class="qa-scrim" aria-hidden="true"></div>
+            <div class="qa-actions">
+              <button type="button" class="qa-pill" data-action="copy">Copy</button>
+              <button type="button" class="qa-pill" data-action="save">Save</button>
+            </div>
+            <button type="button" class="qa-corner tl" data-action="close" aria-label="Close"><span class="icon" style="--icon:url(assets/icons/x.svg)"></span></button>
+            <button type="button" class="qa-corner tr" data-action="pin" aria-label="Pin to the screen"><span class="icon" style="--icon:url(assets/icons/pin.svg)"></span></button>
+            <a class="qa-corner bl" data-action="annotate" href="#annotate" aria-label="Annotate"><span class="icon" style="--icon:url(assets/icons/pen-line.svg)"></span></a>
+          </div>
+          <p class="qa-meta mono"></p>
+        </article>
+      </template>
+    </section>
+
+    <section id="flow" class="section wrap" aria-labelledby="flow-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">01 / How it works</p>
+        <h2 id="flow-title">From shortcut to someone else’s screen.</h2>
+        <p>Most captures need a few seconds of work. ShotLama keeps each step close to the one before.</p>
+      </div>
+      <ol class="flow">
+        <li class="step reveal">
+          <div class="art art-capture" aria-hidden="true">
+            <div class="mini-window"><i></i><i></i><i></i><b></b><b></b><b></b><b></b><b></b></div>
+            <div class="mini-sel"><span class="mono">1280 × 720</span></div>
+            <div class="mini-loupe"></div>
+          </div>
+          <p class="step-number mono">01</p>
+          <h3>Capture</h3>
+          <p>Press a shortcut and the screen holds still. Select an area, a window or a whole display, with a loupe, snapping and exact sizes.</p>
+        </li>
+        <li class="step reveal" style="--i:1">
+          <div class="art art-card" aria-hidden="true">
+            <div class="mini-card back"></div>
+            <div class="mini-card"><span class="pill">Copy</span><span class="pill">Save</span></div>
+            <div class="mini-toast"><span class="icon" style="--icon:url(assets/icons/check.svg)"></span>Copied</div>
+          </div>
+          <p class="step-number mono">02</p>
+          <h3>Quick Access</h3>
+          <p>The capture lands in a card in the corner of your screen. Copy it, save it, drag it into another app, pin it, or swipe it away.</p>
+        </li>
+        <li class="step reveal" style="--i:2">
+          <div class="art art-annotate" aria-hidden="true">
+            <div class="mini-doc"><b></b><b></b><b></b><b></b></div>
+            <svg viewBox="0 0 200 120" focusable="false"><path class="mini-arrow" d="M150 104C138 84 120 74 96 72"/><path class="mini-head" d="m86 72 14-8-2 9 2 9Z"/><circle class="mini-count" cx="46" cy="30" r="9"/><text x="46" y="34" text-anchor="middle">1</text></svg>
+          </div>
+          <p class="step-number mono">03</p>
+          <h3>Annotate</h3>
+          <p>Open the editor for arrows, text, counters and concealment. Put the result on a background and share a capture that explains itself.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="annotate" class="section wrap" aria-labelledby="annotate-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">02 / Annotate</p>
+        <h2 id="annotate-title">Point at what matters.</h2>
+        <p>Arrows, shapes, text, counters, a highlighter, spotlight and concealment. Every mark stays editable, even when you reopen the capture from History weeks later.</p>
+      </div>
+
+      <div id="editor" class="editor reveal">
+        <div class="editor-bar">
+          <span class="lights" aria-hidden="true"><i></i><i></i><i></i><span class="icon" style="--icon:url(assets/icons/undo-2.svg)"></span><span class="icon" style="--icon:url(assets/icons/redo-2.svg)"></span></span>
+          <div class="dock" role="group" aria-label="Annotation layers">
+            <button type="button" data-layer="arrow" aria-pressed="true" title="Arrow and text"><span class="icon" style="--icon:url(assets/icons/arrow-up-right.svg)"></span><span class="visually-hidden">Arrow and text</span></button>
+            <button type="button" data-layer="shape" aria-pressed="true" title="Rectangle"><span class="icon" style="--icon:url(assets/icons/square.svg)"></span><span class="visually-hidden">Rectangle</span></button>
+            <button type="button" data-layer="counter" aria-pressed="true" title="Counters"><span class="icon" style="--icon:url(assets/icons/hash.svg)"></span><span class="visually-hidden">Counters</span></button>
+            <button type="button" data-layer="highlight" aria-pressed="true" title="Highlighter"><span class="icon" style="--icon:url(assets/icons/highlighter.svg)"></span><span class="visually-hidden">Highlighter</span></button>
+            <button type="button" data-layer="conceal" aria-pressed="true" title="Conceal"><span class="icon" style="--icon:url(assets/icons/eye-off.svg)"></span><span class="visually-hidden">Conceal</span></button>
+            <button type="button" data-layer="spotlight" aria-pressed="false" title="Spotlight"><span class="icon" style="--icon:url(assets/icons/scan-eye.svg)"></span><span class="visually-hidden">Spotlight</span></button>
+          </div>
+          <span class="editor-actions" aria-hidden="true"><span class="fake-button">Copy</span><span class="fake-button primary">Save</span></span>
+        </div>
+        <div class="editor-body">
+          <div id="canvas" class="canvas">
+            <div id="backdrop" class="backdrop" data-bg="veil">
+              <div id="capture" class="capture">
+                <svg class="doc" viewBox="0 0 640 420" role="img" aria-labelledby="doc-title" focusable="false">
+                  <title id="doc-title">A made-up project dashboard called Orbit, annotated with an arrow, a rectangle, two counters and a highlight. The owner’s address is concealed.</title>
+                  <defs>
+                    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#93C5FD"/></linearGradient>
+                  </defs>
+                  <rect width="640" height="420" fill="#FFFFFF"/>
+                  <rect width="640" height="34" fill="#F4F4F7"/>
+                  <path d="M0 34.5H640" stroke="#E4E4EC"/>
+                  <circle cx="18" cy="17" r="5" fill="#FF5F57"/><circle cx="34" cy="17" r="5" fill="#FEBC2E"/><circle cx="50" cy="17" r="5" fill="#28C840"/>
+                  <text x="320" y="21" text-anchor="middle" class="t-faint">Orbit · Sprint 42</text>
+                  <rect x="0" y="35" width="132" height="385" fill="#F7F7FA"/>
+                  <path d="M132.5 35V420" stroke="#ECECF2"/>
+                  <rect x="10" y="73" width="112" height="22" rx="6" fill="#E8E7FF"/>
+                  <text x="22" y="62" class="t-muted">Inbox</text>
+                  <text x="22" y="88" class="t-strong" fill="#4338CA">Sprint board</text>
+                  <text x="22" y="114" class="t-muted">Roadmap</text>
+                  <text x="22" y="140" class="t-muted">Releases</text>
+                  <text x="22" y="166" class="t-muted">Team</text>
+                  <text x="22" y="192" class="t-muted">Settings</text>
+                  <text x="150" y="64" class="t-title">Sprint 42 overview</text>
+                  <g class="stats">
+                    <rect x="150" y="80" width="148" height="56" rx="8"/><rect x="310" y="80" width="148" height="56" rx="8"/><rect x="470" y="80" width="148" height="56" rx="8"/>
+                  </g>
+                  <text x="162" y="99" class="t-label">Completed</text><text x="162" y="125" class="t-value">38</text>
+                  <text x="322" y="99" class="t-label">In review</text><text x="322" y="125" class="t-value">12</text>
+                  <text x="482" y="99" class="t-label">Velocity</text><text x="482" y="125" class="t-value">+14 %</text>
+                  <rect x="150" y="150" width="468" height="162" rx="8" fill="#FFFFFF" stroke="#E4E4EC"/>
+                  <path d="M166 200H602M166 240H602M166 280H602" stroke="#F0F0F5"/>
+                  <g fill="url(#bar)">
+                    <rect x="172" y="246" width="32" height="52" rx="4"/><rect x="220" y="228" width="32" height="70" rx="4"/><rect x="268" y="240" width="32" height="58" rx="4"/>
+                    <rect x="316" y="210" width="32" height="88" rx="4"/><rect x="364" y="222" width="32" height="76" rx="4"/><rect x="412" y="194" width="32" height="104" rx="4"/>
+                    <rect x="460" y="202" width="32" height="96" rx="4"/><rect x="508" y="176" width="32" height="122" rx="4"/><rect x="556" y="186" width="32" height="112" rx="4"/>
+                  </g>
+                  <rect x="150" y="326" width="82" height="26" rx="6" fill="#3B82F6"/>
+                  <text x="191" y="343" text-anchor="middle" class="t-strong" fill="#FFFFFF">New filter</text>
+                  <rect x="240.5" y="326.5" width="62" height="25" rx="6" fill="#FFFFFF" stroke="#D9D9E3"/>
+                  <text x="271.5" y="343" text-anchor="middle" class="t-strong" fill="#3F3F4E">Export</text>
+                  <text x="316" y="343" class="t-muted">owner:</text>
+                  <text x="356" y="343" class="t-muted secret">jo.example@orbit.test</text>
+
+                  <!-- Annotation layers, in document points. -->
+                  <path class="layer spotlight" data-layer="spotlight" fill-rule="evenodd" d="M0 0H640V420H0ZM156 144h456a10 10 0 0 1 10 10v154a10 10 0 0 1-10 10H156a10 10 0 0 1-10-10V154a10 10 0 0 1 10-10Z"/>
+                  <g class="layer conceal" data-layer="conceal"><rect x="354" y="331" width="6" height="6" fill="#E2E4EA"/><rect x="360" y="331" width="6" height="6" fill="#D7DAE1"/><rect x="366" y="331" width="6" height="6" fill="#BCC2CD"/><rect x="372" y="331" width="6" height="6" fill="#D7DAE1"/><rect x="378" y="331" width="6" height="6" fill="#BCC2CD"/><rect x="384" y="331" width="6" height="6" fill="#BCC2CD"/><rect x="390" y="331" width="6" height="6" fill="#BCC2CD"/><rect x="396" y="331" width="6" height="6" fill="#E2E4EA"/><rect x="402" y="331" width="6" height="6" fill="#C9CDD6"/><rect x="408" y="331" width="6" height="6" fill="#A9B0BE"/><rect x="414" y="331" width="6" height="6" fill="#B7BDC9"/><rect x="420" y="331" width="6" height="6" fill="#BCC2CD"/><rect x="426" y="331" width="6" height="6" fill="#C9CDD6"/><rect x="432" y="331" width="6" height="6" fill="#B7BDC9"/><rect x="438" y="331" width="6" height="6" fill="#C9CDD6"/><rect x="444" y="331" width="6" height="6" fill="#D7DAE1"/><rect x="450" y="331" width="6" height="6" fill="#A9B0BE"/><rect x="456" y="331" width="6" height="6" fill="#B7BDC9"/><rect x="462" y="331" width="6" height="6" fill="#A9B0BE"/><rect x="468" y="331" width="6" height="6" fill="#E2E4EA"/><rect x="474" y="331" width="6" height="6" fill="#C9CDD6"/><rect x="354" y="337" width="6" height="6" fill="#E2E4EA"/><rect x="360" y="337" width="6" height="6" fill="#B7BDC9"/><rect x="366" y="337" width="6" height="6" fill="#C9CDD6"/><rect x="372" y="337" width="6" height="6" fill="#BCC2CD"/><rect x="378" y="337" width="6" height="6" fill="#B7BDC9"/><rect x="384" y="337" width="6" height="6" fill="#A9B0BE"/><rect x="390" y="337" width="6" height="6" fill="#D7DAE1"/><rect x="396" y="337" width="6" height="6" fill="#B7BDC9"/><rect x="402" y="337" width="6" height="6" fill="#A9B0BE"/><rect x="408" y="337" width="6" height="6" fill="#B7BDC9"/><rect x="414" y="337" width="6" height="6" fill="#C9CDD6"/><rect x="420" y="337" width="6" height="6" fill="#B7BDC9"/><rect x="426" y="337" width="6" height="6" fill="#E2E4EA"/><rect x="432" y="337" width="6" height="6" fill="#E2E4EA"/><rect x="438" y="337" width="6" height="6" fill="#A9B0BE"/><rect x="444" y="337" width="6" height="6" fill="#B7BDC9"/><rect x="450" y="337" width="6" height="6" fill="#B7BDC9"/><rect x="456" y="337" width="6" height="6" fill="#C9CDD6"/><rect x="462" y="337" width="6" height="6" fill="#C9CDD6"/><rect x="468" y="337" width="6" height="6" fill="#B7BDC9"/><rect x="474" y="337" width="6" height="6" fill="#B7BDC9"/><rect x="354" y="343" width="6" height="6" fill="#B7BDC9"/><rect x="360" y="343" width="6" height="6" fill="#B7BDC9"/><rect x="366" y="343" width="6" height="6" fill="#D7DAE1"/><rect x="372" y="343" width="6" height="6" fill="#D7DAE1"/><rect x="378" y="343" width="6" height="6" fill="#B7BDC9"/><rect x="384" y="343" width="6" height="6" fill="#E2E4EA"/><rect x="390" y="343" width="6" height="6" fill="#BCC2CD"/><rect x="396" y="343" width="6" height="6" fill="#BCC2CD"/><rect x="402" y="343" width="6" height="6" fill="#B7BDC9"/><rect x="408" y="343" width="6" height="6" fill="#B7BDC9"/><rect x="414" y="343" width="6" height="6" fill="#BCC2CD"/><rect x="420" y="343" width="6" height="6" fill="#B7BDC9"/><rect x="426" y="343" width="6" height="6" fill="#A9B0BE"/><rect x="432" y="343" width="6" height="6" fill="#D7DAE1"/><rect x="438" y="343" width="6" height="6" fill="#C9CDD6"/><rect x="444" y="343" width="6" height="6" fill="#D7DAE1"/><rect x="450" y="343" width="6" height="6" fill="#A9B0BE"/><rect x="456" y="343" width="6" height="6" fill="#B7BDC9"/><rect x="462" y="343" width="6" height="6" fill="#B7BDC9"/><rect x="468" y="343" width="6" height="6" fill="#D7DAE1"/><rect x="474" y="343" width="6" height="6" fill="#C9CDD6"/></g>
+                  <rect class="layer highlight" data-layer="highlight" x="476" y="108" width="72" height="24" rx="3"/>
+                  <rect class="layer shape ann-stroke" data-layer="shape" x="144" y="74" width="480" height="68" rx="11"/>
+                  <g class="layer arrow" data-layer="arrow">
+                    <path class="ann-fill" d="M388 394C350 393 300 381 259.1 354.6L256.9 361.4C300 386 350 396 388 394Z"/>
+                    <path class="ann-fill" d="M236 352L261 347.4 255 368.6Z"/>
+                    <text x="396" y="398" class="hand ann-text">New filter lives here</text>
+                  </g>
+                  <g class="layer counter" data-layer="counter">
+                    <g class="count"><circle class="ann-fill" cx="144" cy="74" r="12"/><text x="144" y="78.5" text-anchor="middle">1</text></g>
+                    <g class="count"><circle class="ann-fill" cx="146" cy="324" r="12"/><text x="146" y="328.5" text-anchor="middle">2</text></g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <aside class="inspector" aria-label="Background">
+            <h3>Background</h3>
+            <div class="swatches" role="radiogroup" aria-label="Backdrop">
+              <button type="button" role="radio" aria-checked="false" data-bg="none" aria-label="None"></button>
+              <button type="button" role="radio" aria-checked="true" data-bg="veil" aria-label="Veil"></button>
+              <button type="button" role="radio" aria-checked="false" data-bg="match" aria-label="Match the capture"></button>
+              <button type="button" role="radio" aria-checked="false" data-bg="dusk" aria-label="Dusk"></button>
+              <button type="button" role="radio" aria-checked="false" data-bg="lagoon" aria-label="Lagoon"></button>
+              <button type="button" role="radio" aria-checked="false" data-bg="ember" aria-label="Ember"></button>
+              <button type="button" role="radio" aria-checked="false" data-bg="peach" aria-label="Peach"></button>
+              <button type="button" role="radio" aria-checked="false" data-bg="meadow" aria-label="Meadow"></button>
+              <button type="button" role="radio" aria-checked="false" data-bg="midnight" aria-label="Midnight"></button>
+              <button type="button" role="radio" aria-checked="false" data-bg="graphite" aria-label="Graphite"></button>
+            </div>
+            <label class="slider"><span>Padding <output id="pad-value" class="mono">64 pt</output></span><input id="pad" type="range" min="0" max="256" step="8" value="64"></label>
+            <label class="slider"><span>Corners <output id="radius-value" class="mono">12 pt</output></span><input id="radius" type="range" min="0" max="40" step="2" value="12"></label>
+            <div class="field">
+              <span id="shadow-label">Shadow</span>
+              <div class="segmented" role="radiogroup" aria-labelledby="shadow-label">
+                <button type="button" role="radio" aria-checked="false" data-shadow="none">None</button>
+                <button type="button" role="radio" aria-checked="false" data-shadow="soft">Soft</button>
+                <button type="button" role="radio" aria-checked="false" data-shadow="medium">Medium</button>
+                <button type="button" role="radio" aria-checked="true" data-shadow="deep">Deep</button>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="editor-foot">
+          <div class="palette" role="radiogroup" aria-label="Annotation colour">
+            <button type="button" role="radio" aria-checked="true" data-color="#FF3B30" style="--c:#FF3B30" aria-label="Red"></button>
+            <button type="button" role="radio" aria-checked="false" data-color="#FF9500" style="--c:#FF9500" aria-label="Orange"></button>
+            <button type="button" role="radio" aria-checked="false" data-color="#34C759" style="--c:#34C759" aria-label="Green"></button>
+            <button type="button" role="radio" aria-checked="false" data-color="#0A84FF" style="--c:#0A84FF" aria-label="Blue"></button>
+            <button type="button" role="radio" aria-checked="false" data-color="#AF52DE" style="--c:#AF52DE" aria-label="Purple"></button>
+            <button type="button" role="radio" aria-checked="false" data-color="#1C1C1E" style="--c:#1C1C1E" aria-label="Black"></button>
+          </div>
+          <span id="doc-size" class="mono doc-size">768 × 548 pt · PNG</span>
+        </div>
+      </div>
+      <p class="demo-note">A model, not the app. The dashboard is made up. Toggle the tools, change the colour and pick a background.</p>
+    </section>
+
+    <section id="features" class="section wrap" aria-labelledby="features-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">03 / Features</p>
+        <h2 id="features-title">What it does.</h2>
+        <p>The first release covers still captures from shortcut to shared file. Screen recording follows after it.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature reveal">
+          <span class="feature-icon"><span class="icon" style="--icon:url(assets/icons/crop.svg)"></span></span>
+          <h3>Area, window and display</h3>
+          <p>The screen holds still while you select. A loupe, edge snapping and exact sizes help you get the pixels you mean. Window captures can sit on your wallpaper.</p>
+        </article>
+        <article class="feature reveal" style="--i:1">
+          <span class="feature-icon"><span class="icon" style="--icon:url(assets/icons/layers.svg)"></span></span>
+          <h3>Quick Access</h3>
+          <p>Every capture waits in a card. Copy, save, drag into any app, pin or annotate with one gesture. The card never takes the focus away from what you are doing.</p>
+        </article>
+        <article class="feature reveal" style="--i:2">
+          <span class="feature-icon"><span class="icon" style="--icon:url(assets/icons/pen-line.svg)"></span></span>
+          <h3>Annotate</h3>
+          <p>Tapered arrows, shapes, text in three faces, counters, a highlighter and spotlight. Undo and redo go back as far as you need.</p>
+        </article>
+        <article class="feature reveal">
+          <span class="feature-icon"><span class="icon" style="--icon:url(assets/icons/wallpaper.svg)"></span></span>
+          <h3>Backgrounds</h3>
+          <p>Place a capture on a gradient, a colour, your wallpaper or colours taken from the capture itself, with padding, corners and a shadow.</p>
+        </article>
+        <article class="feature reveal" style="--i:1">
+          <span class="feature-icon"><span class="icon" style="--icon:url(assets/icons/pin.svg)"></span></span>
+          <h3>Pin</h3>
+          <p>Keep a capture floating above your work while you type or compare. Zoom it, fade it, or let clicks pass through to the window below.</p>
+        </article>
+        <article class="feature reveal" style="--i:2">
+          <span class="feature-icon"><span class="icon" style="--icon:url(assets/icons/scan-text.svg)"></span></span>
+          <h3>Capture Text</h3>
+          <p>Select an area and copy the text in it. Recognition runs on your computer with the engine your system provides.</p>
+        </article>
+        <article class="feature reveal">
+          <span class="feature-icon"><span class="icon" style="--icon:url(assets/icons/history.svg)"></span></span>
+          <h3>History</h3>
+          <p>Earlier captures stay at hand. Reopen one and every arrow and label is still editable. You choose how long History keeps them.</p>
+        </article>
+        <article class="feature reveal" style="--i:1">
+          <span class="feature-icon"><span class="icon" style="--icon:url(assets/icons/keyboard.svg)"></span></span>
+          <h3>Keyboard all the way</h3>
+          <p>Go from shortcut to clipboard without touching the pointer. Every shortcut can be changed, and conflicts are shown before they bite.</p>
+        </article>
+        <article class="feature later reveal" style="--i:2">
+          <span class="feature-icon"><span class="icon" style="--icon:url(assets/icons/video.svg)"></span></span>
+          <h3>Recording <span class="badge">Later</span></h3>
+          <p>Video and GIF with audio, clicks and keystrokes, a trim editor, and later scrolling capture. Planned after the first release.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="privacy" class="section wrap" aria-labelledby="privacy-title">
+      <div class="privacy reveal">
+        <div class="privacy-copy">
+          <p class="eyebrow">04 / Privacy</p>
+          <h2 id="privacy-title">Your captures stay on your computer.</h2>
+          <p>Screens show private things. ShotLama is built so that what you capture goes only where you send it.</p>
+          <ul class="checks">
+            <li>No account and no cloud. Captures and History live on your disk.</li>
+            <li>Concealment is flattened into every copy and file. A blurred address cannot be restored from the output.</li>
+            <li>Saved images carry no metadata: no location, no device name, no timestamps.</li>
+            <li>The only network access is an update check, and only when you allow it.</li>
+          </ul>
+        </div>
+        <div class="privacy-art" aria-hidden="true">
+          <div class="file-card">
+            <div class="file-head"><span class="icon" style="--icon:url(assets/icons/file-image.svg)"></span><span class="mono">capture.png</span></div>
+            <dl>
+              <div><dt>Location</dt><dd>none</dd></div>
+              <div><dt>Device</dt><dd>none</dd></div>
+              <div><dt>Created by</dt><dd>none</dd></div>
+              <div><dt>Timestamps</dt><dd>none</dd></div>
+              <div><dt>Colour</dt><dd class="ok">sRGB</dd></div>
+            </dl>
+          </div>
+          <img class="privacy-lama" src="assets/lama/lama-resting.svg" width="150" height="150" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section id="platforms" class="section wrap" aria-labelledby="platforms-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">05 / Platforms</p>
+        <h2 id="platforms-title">One tool on three desktops.</h2>
+        <p>Each system works a little differently. Where a desktop has its own picker or permission, ShotLama uses it and explains it once.</p>
+      </div>
+      <div class="platform-grid">
+        <article class="platform-card reveal">
+          <span class="os" style="--icon:url(assets/platform/apple.svg)"></span>
+          <h3>macOS</h3>
+          <p>macOS 14 or later, on Apple silicon and Intel. The first platform to be finished and released.</p>
+        </article>
+        <article class="platform-card reveal" style="--i:1">
+          <span class="os" style="--icon:url(assets/platform/windows.svg)"></span>
+          <h3>Windows</h3>
+          <p>Windows 10 version 2004 or later and Windows 11, 64-bit. Follows after macOS.</p>
+        </article>
+        <article class="platform-card reveal" style="--i:2">
+          <span class="os" style="--icon:url(assets/platform/linux.svg)"></span>
+          <h3>Linux</h3>
+          <p>x86_64 on X11, KDE Plasma 6, GNOME 46 or later and wlroots compositors. On Wayland, the desktop’s screen-sharing portal takes part in each capture.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="download" class="section wrap" aria-labelledby="download-title">
+      <div class="download-stage reveal">
+        <span class="download-lama" aria-hidden="true"><img src="assets/lama/lama-standing.svg" width="132" height="132" alt=""></span>
+        <div>
+          <p class="eyebrow">06 / Download</p>
+          <h2 id="download-title">Get ShotLama</h2>
+          <p id="download-lead">ShotLama is in development, and there is no public release yet. The first beta is planned for macOS. Downloads appear on this page when a release is published.</p>
+        </div>
+      </div>
+      <div id="release-status" class="release-status" role="status" aria-live="polite">No public release yet.</div>
+      <div id="planned-grid" class="download-grid planned">
+        <article class="platform">
+          <div class="platform-head"><span class="platform-mark"><span class="icon" style="--icon:url(assets/platform/apple.svg)"></span></span><div><h3>macOS</h3><p>Signed and notarised disk image</p></div><span class="chip">Planned first</span></div>
+        </article>
+        <article class="platform">
+          <div class="platform-head"><span class="platform-mark"><span class="icon" style="--icon:url(assets/platform/windows.svg)"></span></span><div><h3>Windows</h3><p>Signed installer</p></div><span class="chip">Planned</span></div>
+        </article>
+        <article class="platform">
+          <div class="platform-head"><span class="platform-mark"><span class="icon" style="--icon:url(assets/platform/linux.svg)"></span></span><div><h3>Linux</h3><p>Flatpak and one direct package</p></div><span class="chip">Planned</span></div>
+        </article>
+      </div>
+      <div id="release-bar" class="release-bar" hidden></div>
+      <div id="download-grid" class="download-grid" hidden></div>
+      <div id="download-extra" class="download-extra" hidden>
+        <div id="latest-notes" class="latest-notes" hidden></div>
+        <details class="verify">
+          <summary>Check a download</summary>
+          <p>Each package lists its SHA-256 checksum. Copy it with the button next to the package and compare it with your file.</p>
+          <pre>shasum -a 256 ShotLama-*.dmg     # macOS
+sha256sum ShotLama-*             # Linux
+Get-FileHash ShotLama-*.msi      # Windows PowerShell</pre>
+        </details>
+      </div>
+      <noscript><p class="release-status">JavaScript is required to show the download links.</p></noscript>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><span class="signature" role="img" aria-label="The Lama signature"></span><div><strong>ShotLama</strong><p>A screenshot tool by <a href="https://devmil.de/">Devmil Solutions</a>.</p></div></div>
+    <nav aria-label="Footer"><a href="releases.html">Release notes</a><a href="privacy.html">Privacy</a></nav>
+    <p>No analytics. No cookies. No tracking scripts.</p>
+  </footer>
+</body>
+</html>
