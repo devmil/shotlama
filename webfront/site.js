@@ -24,13 +24,14 @@
 
   // ---------------------------------------------------------------- Lama
   // The Lama greets with a nod and settles proud. Tapping it plays a gag
-  // from lama-antics.js; after a capture it hops.
+  // from lama-antics.js. When a capture starts it notices and strikes a
+  // pose for the camera; captures show it exactly as it was at the shutter.
+  let antics = null;
   function heroLama() {
     const lama = $("#hero-lama");
     if (!lama) return () => {};
     setTimeout(() => lama.classList.remove("is-hello"), 1600);
     lama.addEventListener("animationend", () => lama.classList.remove("is-hopping"));
-    let antics = null;
     if (window.LamaAntics) {
       antics = LamaAntics.attach(lama, {
         base: "assets/lama/",
@@ -38,18 +39,97 @@
         taps: {
           capture: async (antic) => {
             await antic.move("hop");
-            if (!antic.reduced()) runAuto();
+            // Once this gag has ended, so the Lama is free to pose.
+            if (!antic.reduced()) setTimeout(runAuto, 0);
           },
         },
       });
     }
     return () => {
-      if (reduced.matches) return;
-      if (antics) { antics.play("hop"); return; }
+      if (reduced.matches || antics) return;
       lama.classList.remove("is-hopping");
       void lama.offsetWidth;
       lama.classList.add("is-hopping");
     };
+  }
+
+  // Poses for the camera. A guided capture has a known shutter time, so
+  // the Lama can time a jump or a flip to peak on it; a capture dragged by
+  // the visitor gets a pose it can hold.
+  const HELD = ["cool", "tall", "lean", "hearts"];
+  const TIMED = ["jump", "flip", "cool", "hearts", "tall", "kick", "lean", "confetti"];
+  const shuffled = (list) => {
+    let queue = [];
+    return () => {
+      if (!queue.length) queue = list.slice().sort(() => Math.random() - 0.5);
+      return queue.shift();
+    };
+  };
+  const nextHeld = shuffled(HELD);
+  const nextTimed = shuffled(TIMED);
+  let shutter = null;
+
+  function strikePose(shotAt) {
+    if (!antics || reduced.matches || antics.busy() === "tap") return;
+    const style = shotAt ? nextTimed() : nextHeld();
+    const held = shutter.promise;
+    antics.react(async (a) => {
+      const until = () => (shotAt ? shotAt - performance.now() : Infinity);
+      // It notices the camera.
+      a.pose("hello");
+      await a.move("dip");
+      if (!a.live()) return;
+      if (style === "jump" || style === "flip" || style === "kick") {
+        const air = style === "flip" ? 900 : 760;
+        a.pose(style === "flip" ? null : "standing");
+        a.jump({ lead: Math.max(0, until() - air / 2), air, style: style === "jump" ? "tuck" : style, height: style === "flip" ? 0.18 : 0.15 });
+      } else if (style === "cool") {
+        a.pose("shadesUp");
+        a.lean("rotate(-7deg) scale(1.04)", 320);
+        a.bits("spark", 3, a.SHADES, { reach: 22, size: 8, duration: 900, color: "#FFF8EB" });
+      } else if (style === "tall") {
+        a.pose(null);
+        a.lean("scale(0.96, 1.08)", 380);
+      } else if (style === "lean") {
+        a.pose("standing");
+        a.lean("translateX(-6%) rotate(-9deg)", 420);
+      } else {
+        a.pose("hello");
+        a.lean("rotate(5deg) translateY(1%)", 300);
+      }
+      // Hearts and confetti go up just before a timed shutter, so they are
+      // in the picture; with a held pose they keep coming until it fires.
+      const burst = () => {
+        if (style === "hearts") a.bits("heart", 4, a.HEAD, { angle: -Math.PI / 2, spread: 0.9, reach: 46, size: 9, duration: 1600, stagger: 80 });
+        if (style === "confetti") a.bits("confetti", 14, a.HEAD, { angle: -Math.PI / 2, spread: 1.1, reach: 64, fall: 40, turn: 400, duration: 1500 });
+      };
+      if (shotAt) {
+        setTimeout(burst, Math.max(0, until() - 420));
+      } else if (style === "hearts") {
+        burst();
+        const again = setInterval(() => (a.live() ? burst() : clearInterval(again)), 1400);
+        held.then(() => clearInterval(again));
+      }
+      const shot = await held;
+      if (!a.live()) return;
+      // The flash holds everything still for a moment.
+      await a.wait(shot ? 520 : 0);
+      await a.unlean(320);
+      if (!shot) {
+        a.pose("restingNod");
+        await a.wait(700);
+        return;
+      }
+      // Then it turns to the card to see how it came out.
+      a.pose("hello");
+      a.face("right");
+      await a.wait(500);
+      a.bits("heart", 3, a.HEAD, { angle: -Math.PI / 2, spread: 0.6, reach: 36, size: 8, duration: 1200, stagger: 120 });
+      await a.move("dip");
+      a.face(null);
+      a.pose(null);
+      await a.move("hop");
+    }, "camera").finally(() => antics.face(null));
   }
 
   // ------------------------------------------------------------- Capture
@@ -95,14 +175,18 @@
       view.setAttribute("aria-hidden", "true");
       view.inert = true;
       Object.assign(view.style, { width: `${w}px`, height: `${h}px`, right: "auto", bottom: "auto" });
+      if (antics) view.append(...antics.snapshot($(".hero-lama", view), stage.getBoundingClientRect()));
       return view;
     }
     function place(view, rect, scale, dx = 0, dy = 0) {
       view.style.transform = `translate(${dx - rect.x * scale}px, ${dy - rect.y * scale}px) scale(${scale})`;
     }
 
-    function begin(auto) {
+    function begin(auto, shotAt) {
       busy = true;
+      shutter = {};
+      shutter.promise = new Promise((resolve) => { shutter.resolve = resolve; });
+      strikePose(shotAt);
       stage.classList.add("is-capturing");
       layer.classList.toggle("is-auto", auto);
       lensView = snapshot();
@@ -110,6 +194,8 @@
       lens.append(lensView);
     }
     function end() {
+      if (shutter) shutter.resolve(false);
+      shutter = null;
       stage.classList.remove("is-capturing", "show-loupe");
       layer.classList.remove("has-selection", "is-auto");
       lensView = null;
@@ -154,7 +240,10 @@
       flash.classList.remove("go");
       void flash.offsetWidth;
       flash.classList.add("go");
+      // Like the app's frozen screen, the Lama holds still for the flash.
+      if (antics && !reduced.matches) antics.freeze(480);
       const card = makeCard(rect);
+      if (shutter) shutter.resolve(true);
       const thumb = $(".qa-thumb", card);
       const fit = card.fit;
       end();
@@ -166,7 +255,7 @@
         const flight = document.createElement("div");
         flight.className = "flight";
         Object.assign(flight.style, { left: `${rect.x}px`, top: `${rect.y}px`, width: `${rect.w}px`, height: `${rect.h}px` });
-        const view = snapshot();
+        const view = card.frozen.cloneNode(true);
         place(view, rect, 1);
         view.style.position = "absolute";
         flight.append(view);
@@ -195,6 +284,8 @@
       const fit = { k, ox: (box.w - rect.w * k) / 2, oy: (box.h - rect.h * k) / 2 };
       thumb.style.height = `${box.h}px`;
       const view = snapshot();
+      // The card keeps this frame; the flight and a pin show the same one.
+      card.frozen = view.cloneNode(true);
       place(view, rect, k, fit.ox, fit.oy);
       thumb.append(view);
       const ratioPx = window.devicePixelRatio || 1;
@@ -257,7 +348,7 @@
       node.setAttribute("role", "group");
       node.setAttribute("aria-label", "Pinned capture. Drag to move.");
       Object.assign(node.style, { left: `${rect.x}px`, top: `${rect.y}px`, width: `${rect.w}px`, height: `${rect.h}px` });
-      const view = snapshot();
+      const view = card.frozen.cloneNode(true);
       place(view, rect, 1);
       const close = document.createElement("button");
       close.type = "button";
@@ -387,7 +478,9 @@
       const pad = box.width * 0.04;
       const from = { x: box.left - stageBox.left - pad, y: box.top - stageBox.top - pad };
       const to = { x: box.right - stageBox.left + pad, y: box.bottom - stageBox.top + pad };
-      begin(true);
+      // The shutter time is known up front, so the Lama can time its pose.
+      const shotAt = performance.now() + 2100;
+      begin(true, shotAt);
       if (reduced.matches) {
         draw(rectOf(from, to));
         await sleep(500);
@@ -402,7 +495,7 @@
         draw(rectOf(from, point));
         aim(point);
       });
-      await sleep(320);
+      await sleep(Math.max(120, shotAt - performance.now()));
       await shoot(rectOf(from, to));
     }
     runAuto = auto;
