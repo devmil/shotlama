@@ -30,12 +30,12 @@
     linux: { label: "Linux", icon: "linux" },
   };
   const packages = {
-    dmg: { name: ["Disk image", "Disk-Image"], hint: ["Apple silicon and Intel", "Apple silicon und Intel"], icon: "platform/apple" },
-    msi: { name: ["Installer", "Installationsprogramm"], hint: ["64-bit Windows", "Windows, 64 Bit"], icon: "platform/windows" },
-    exe: { name: ["Installer", "Installationsprogramm"], hint: ["64-bit Windows", "Windows, 64 Bit"], icon: "platform/windows" },
+    dmg: { name: ["Disk image", "Disk-Image"], hint: ["Apple silicon and Intel", "Apple Silicon und Intel"], icon: "platform/apple" },
+    msi: { name: ["Installer", "Installationsprogramm"], hint: ["64-bit Windows", "64-Bit-Windows"], icon: "platform/windows" },
+    exe: { name: ["Installer", "Installationsprogramm"], hint: ["64-bit Windows", "64-Bit-Windows"], icon: "platform/windows" },
     flatpak: { name: ["Flatpak", "Flatpak"], hint: ["Most distributions", "Die meisten Distributionen"], icon: "icons/package" },
     AppImage: { name: ["AppImage", "AppImage"], hint: ["One portable file", "Eine portable Datei"], icon: "platform/appimage" },
-    deb: { name: ["DEB package", "DEB-Paket"], hint: ["Debian, Ubuntu and derivatives", "Debian, Ubuntu und Ableger"], icon: "platform/debian" },
+    deb: { name: ["DEB package", "DEB-Paket"], hint: ["Debian, Ubuntu and derivatives", "Debian, Ubuntu und Derivate"], icon: "platform/debian" },
     rpm: { name: ["RPM package", "RPM-Paket"], hint: ["Fedora and other RPM-based distributions", "Fedora und andere RPM-basierte Distributionen"], icon: "platform/fedora" },
     "tar.gz": { name: ["Tarball", "Tarball"], hint: ["Portable archive", "Portables Archiv"], icon: "platform/archive" },
   };
@@ -168,7 +168,7 @@
       title.append(element("h3", "", platforms[platform].label),
         element("p", "", assets.length ? (assets[0].minimum_system || "") : t("Not in this release", "Nicht in dieser Version")));
       head.append(mark, title);
-      if (platform === detected) head.append(element("span", "chip plain", t("Your system", "Dieses System")));
+      if (platform === detected) head.append(element("span", "chip plain", t("Your system", "Dein System")));
       card.append(head);
       if (assets.length) {
         const list = element("ul", "assets");
@@ -201,7 +201,7 @@
       r.notes.slice(0, 3).forEach((note) => list.append(element("li", "", note)));
       const more = element("a", "", r.notes.length > 3 ? t(`All ${r.notes.length} changes`, `Alle ${r.notes.length} Änderungen`) : t("Release notes", "Versionshinweise"));
       more.href = "releases.html";
-      latestNotes.append(element("h3", "", t(`Changed in ${r.version}`, `Neu in ${r.version}`)), list, more);
+      latestNotes.append(element("h3", "", t(`Changed in ${r.version}`, `Änderungen in ${r.version}`)), list, more);
       latestNotes.hidden = false;
     }
   }
@@ -210,7 +210,7 @@
     releaseList.textContent = "";
     for (const r of releases) {
       const record = element("article", "release-record");
-      record.append(element("h2", "", `${r.version} · build ${r.build}`),
+      record.append(element("h2", "", t(`${r.version} · build ${r.build}`, `${r.version} · Build ${r.build}`)),
         element("p", "", `${r.channel} · ${r.tag}`));
       if (Array.isArray(r.notes) && r.notes.length) {
         const list = element("ul");

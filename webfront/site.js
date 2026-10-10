@@ -390,7 +390,7 @@
           { duration: 520, easing: "cubic-bezier(0.34, 1.36, 0.64, 1)" });
       }
       dismiss(card, true);
-      announce(t("Pinned. Drag the pin to move it.", "Angeheftet. Den Pin zum Verschieben ziehen."));
+      announce(t("Pinned. Drag the pin to move it.", "Angeheftet. Zieh den Pin, um ihn zu verschieben."));
     }
 
     function wireCard(card) {

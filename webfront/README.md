@@ -44,8 +44,10 @@ its German text (plain text only; `--check` rejects markup inside it), and
 `ShotLamaLanguage.pick(en, de)`; `releases.js` re-renders on the
 `shotlama:language` event. The choice is stored in `localStorage` under
 `preferred-language`, shared by every Devmil site on `devmil.de`; without one,
-a German browser language picks German. German copy uses neutral wording, and
-"Sie" on the legal pages.
+a German browser language picks German. German copy addresses the reader
+with "du" throughout, legal pages included, as the app does, and uses the
+app's German terms for its features ("Bearbeiten" and the editor,
+"Schnellzugriff", "Text erfassen", "Aufzeichnung" for recordings).
 
 The imprint and privacy policy are static files per language:
 `imprint.html` and `privacy.html` in English, `de/imprint.html` and
