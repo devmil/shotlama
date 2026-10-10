@@ -1,15 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-page-language="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy · ShotLama</title>
+  <title>Privacy Policy · ShotLama</title>
   <meta name="description" content="How the ShotLama website and app handle your data.">
   <link rel="canonical" href="https://devmil.de/shotlama/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://devmil.de/shotlama/privacy.html">
+  <link rel="alternate" hreflang="de" href="https://devmil.de/shotlama/de/privacy.html">
   <meta name="theme-color" content="#ECECF1" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0F0F14" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="assets/brand/icon-32.png" sizes="32x32">
   <link rel="stylesheet" href="style.css">
+  <script src="language.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -20,23 +23,71 @@
       <a href="index.html#features">Features</a>
       <a href="index.html#download">Download</a>
     </nav>
+    <div class="header-end">
+      <nav class="lang-switch" aria-label="Language">
+        <a href="privacy.html" data-language="en" lang="en" hreflang="en" aria-current="page">EN</a>
+        <a href="de/privacy.html" data-language="de" lang="de" hreflang="de">DE</a>
+      </nav>
+    </div>
   </header>
   <main id="main" class="page">
-    <div class="island">
+    <article class="island legal">
       <p class="eyebrow">Privacy</p>
-      <h1>A static site, and an app that keeps captures local.</h1>
-      <p>This website uses no analytics, advertising, tracking pixels, cookies or third-party scripts, and it loads no fonts or files from other servers. Its release list is a static file. The host, GitHub Pages, may process ordinary request data such as IP address, time, requested path and browser under its own policy.</p>
-      <h2>The app</h2>
-      <p>Captures, annotations, History and settings stay on your computer. ShotLama has no account and no cloud service, and it sends nothing to Devmil.</p>
-      <p>Saved and copied images carry no identifying metadata. Concealment is flattened into every output, so concealed pixels cannot be restored from the file.</p>
-      <p>The app connects to the network only to check for updates, and only when you start the check or turn on the weekly schedule. Its logs never contain capture pixels, recognised text, file paths, window titles or device names.</p>
-      <h2>Changes</h2>
-      <p>This notice is versioned with the website. Material changes appear here before they take effect.</p>
-    </div>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: 10 October 2026</p>
+      <p>This policy explains how the ShotLama website at devmil.de/shotlama and the ShotLama app for macOS, Windows and Linux handle personal data.</p>
+
+      <h2>1. Controller</h2>
+      <address>Michael Lamers<br>Devmil Solutions<br>Fliederstr. 8<br>83374 Traunwalchen<br>Germany</address>
+      <p>Email: <span class="contact-email" data-user="info" data-domain="devmil" data-tld="de">info [at] devmil [dot] de</span></p>
+
+      <h2>2. Overview</h2>
+      <p>This website and ShotLama are built to collect as little as possible. Devmil Solutions does not run analytics, advertising or tracking. The website sets no cookies and loads nothing from third-party servers: its fonts, images and scripts are served with the site itself. ShotLama has no account and no cloud service, and it does not send your captures, recognised text, History or settings to Devmil Solutions.</p>
+
+      <h2>3. Hosting</h2>
+      <p>The website is hosted by GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). When the site is visited, GitHub processes technical access data to deliver it and keep it secure: IP address, date and time, requested page, referrer, browser and operating system. Legal basis: Art. 6(1)(f) GDPR (legitimate interest in a secure and reliable website).</p>
+      <p>GitHub may process data in the USA. GitHub, Inc. is certified under the EU-U.S. Data Privacy Framework (adequacy decision, Art. 45 GDPR). Details: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy statement</a>. Devmil Solutions has no access to these logs.</p>
+
+      <h2>4. Downloads and release data</h2>
+      <p>The download list on the home page and the release notes are read from a file on this website. There is no public release yet. Once releases are published, the download links point to GitHub Releases, and the files are delivered by GitHub from github.com and its download servers. When you download a file, GitHub processes the same technical access data as described under Hosting, on the same legal basis and under the same privacy statement.</p>
+      <p>To suggest the right package, the page checks your browser’s operating system in the browser itself. This information is not sent anywhere.</p>
+
+      <h2>5. Local storage in your browser</h2>
+      <p>When you choose a language, the website stores that choice (<code>preferred-language</code>, value <code>en</code> or <code>de</code>) in your browser’s local storage. It stores nothing else. The setting is shared with other Devmil Solutions websites on devmil.de, so they open in the same language. This data stays on your device, is never transmitted, and can be deleted in your browser at any time. Legal basis: § 25(2) no. 2 TDDDG (strictly necessary for a service you requested).</p>
+
+      <h2>6. The app</h2>
+      <p>ShotLama is in development and has not been released yet. This section describes the current builds. It will be updated before the first release and whenever the app’s behaviour changes.</p>
+      <h3>Network</h3>
+      <p>The current version of ShotLama makes no connections to the internet. It contains no analytics, telemetry, crash reporting or advertising. It uses only local interfaces of your computer, for example to make sure a single instance runs and, on Linux, to talk to your desktop.</p>
+      <p>An update check is planned. It will run only when you start it or turn on a weekly schedule. Before it is enabled, this section will name the server it contacts and the data it sends.</p>
+      <h3>Captures, History and settings</h3>
+      <p>Captures, annotations, History and settings stay on your computer. Saved captures go to the folder you choose; by default this is the Desktop on macOS and Pictures/ShotLama on Windows and Linux. History, settings and a small clipboard cache are kept in ShotLama’s data folder in your user account. History keeps captures for 30 days by default, and you can change this or clear it.</p>
+      <p>A capture leaves your computer only when you send it: by copying it to the clipboard, dragging it into another app, saving it to a folder or, on macOS, choosing a service in the system’s share menu. The app or service you hand it to processes it under its own terms.</p>
+      <p>Saved and copied images carry no identifying metadata: no location, no device name and no timestamps. Concealment is flattened into every output, so concealed pixels cannot be restored from the file.</p>
+      <h3>Text recognition</h3>
+      <p>Capture Text recognises text on your computer with the engine your system provides: Vision on macOS, the built-in text recognition on Windows, and Tesseract on Linux if it is installed. No image or text is sent to a server for this.</p>
+      <h3>Permissions</h3>
+      <ul>
+        <li><strong>Screen recording (macOS):</strong> ShotLama asks for screen access to take the captures you request.</li>
+        <li><strong>Linux desktop portals:</strong> on Wayland, your desktop’s screenshot and screen-sharing portals take part in captures, and the global shortcuts portal may ask you to confirm ShotLama’s shortcuts.</li>
+        <li><strong>Files (macOS):</strong> ShotLama runs in the macOS App Sandbox. Outside its own data folder, it can only write to folders you have chosen.</li>
+        <li><strong>Camera, microphone and accessibility:</strong> the current version does not use them. It may check whether these permissions have been granted, without asking for them or opening any device. Screen recording with audio, a camera overlay and scrolling capture are planned; they will ask for permission when you first use them, and this policy will be updated before they are released.</li>
+        <li><strong>Notifications:</strong> ShotLama does not use system notifications.</li>
+      </ul>
+      <h3>Credentials and logs</h3>
+      <p>ShotLama has no account and stores no passwords or tokens. It writes no log file. Its diagnostic output never contains capture pixels, recognised text, file paths, window titles or device names.</p>
+
+      <h2>7. Your rights</h2>
+      <p>You have the right of access (Art. 15 GDPR), rectification (Art. 16 GDPR), erasure (Art. 17 GDPR), restriction of processing (Art. 18 GDPR), data portability (Art. 20 GDPR) and objection (Art. 21 GDPR). You also have the right to lodge a complaint with a supervisory authority, for example the Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach, <a href="https://www.lda.bayern.de">www.lda.bayern.de</a>.</p>
+      <p>To exercise your rights, contact <span class="contact-email" data-user="info" data-domain="devmil" data-tld="de">info [at] devmil [dot] de</span>.</p>
+
+      <h2>8. Changes</h2>
+      <p>This policy is updated when the website or the app changes. The current version is always available on this page.</p>
+    </article>
   </main>
   <footer class="site-footer">
     <div class="footer-brand"><span class="signature" role="img" aria-label="The Lama signature"></span><div><strong>ShotLama</strong><p>A screenshot tool by <a href="https://devmil.de/">Devmil Solutions</a>.</p></div></div>
-    <nav aria-label="Footer"><a href="releases.html">Release notes</a><a href="privacy.html" aria-current="page">Privacy</a></nav>
+    <nav aria-label="Footer"><a href="releases.html">Release notes</a><a href="imprint.html">Imprint</a><a href="privacy.html" aria-current="page">Privacy</a></nav>
     <p>No analytics. No cookies. No tracking scripts.</p>
   </footer>
 </body>

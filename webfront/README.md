@@ -34,6 +34,31 @@ labels and states come from the design-system specs and tokens; keep them in
 step when the app changes, and compare with app captures once the native
 surfaces exist.
 
+## Languages and legal pages
+
+English is the source text in the HTML. `language.js` swaps the main pages
+(index, release notes) to German in place: an element with `data-de` holds
+its German text (plain text only; `--check` rejects markup inside it), and
+`data-de-<attribute>` a German `aria-label`, `alt`, `title`, `content` or
+`href`. Text that `site.js` and `releases.js` write picks its language through
+`ShotLamaLanguage.pick(en, de)`; `releases.js` re-renders on the
+`shotlama:language` event. The choice is stored in `localStorage` under
+`preferred-language`, shared by every Devmil site on `devmil.de`; without one,
+a German browser language picks German. German copy uses neutral wording, and
+"Sie" on the legal pages.
+
+The imprint and privacy policy are static files per language:
+`imprint.html` and `privacy.html` in English, `de/imprint.html` and
+`de/privacy.html` in German. Their switch links to the counterpart and stores
+the choice; they never redirect. Every page's footer links to the legal pages
+of its language without JavaScript, and `--check` enforces that and the
+sitemap entry. The contact address appears only as an obfuscated
+`.contact-email` span that `language.js` turns into a link assembled on
+click; `--check` fails if the joined address or a literal mailto link appears
+in any published file. Keep section 6 of the privacy policy in step with the
+app: it states that the current builds make no internet connections and that
+the update check is still planned.
+
 ## Downloads
 
 `releases.js` reads `_data/releases.json`. Until a release exists the index

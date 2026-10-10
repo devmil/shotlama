@@ -8,6 +8,8 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const clamp = (value, low, high) => Math.min(Math.max(value, low), high);
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  // Text this script writes follows the language switch (language.js).
+  const t = (en, de) => (window.ShotLamaLanguage ? window.ShotLamaLanguage.pick(en, de) : en);
   const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
   function tween(ms, step) {
@@ -270,7 +272,8 @@
         await animation.finished.catch(() => {});
         flight.remove();
       }
-      announce(`Capture added to Quick Access, ${dimensions.textContent} pixels.`);
+      announce(t(`Capture added to Quick Access, ${dimensions.textContent} pixels.`,
+        `Aufnahme im Schnellzugriff, ${dimensions.textContent} Pixel.`));
       hop();
     }
 
@@ -291,7 +294,7 @@
       const ratioPx = window.devicePixelRatio || 1;
       const label = `${Math.round(rect.w * ratioPx)} × ${Math.round(rect.h * ratioPx)}`;
       $(".qa-meta", card).textContent = `${label} · PNG`;
-      card.setAttribute("aria-label", `Capture, ${label} pixels`);
+      card.setAttribute("aria-label", t(`Capture, ${label} pixels`, `Aufnahme, ${label} Pixel`));
       card.fit = fit;
       card.rect = rect;
       card.classList.add("is-entering");
@@ -325,7 +328,7 @@
           .catch(() => {}).then(() => card.remove());
       }, reduced.matches ? 0 : 240);
       if (focused) $("#capture-demo").focus();
-      if (!quiet) announce("Card closed.");
+      if (!quiet) announce(t("Card closed.", "Karte geschlossen."));
     }
 
     function confirm(card, button, word) {
@@ -346,14 +349,14 @@
       node.className = "pin";
       node.tabIndex = 0;
       node.setAttribute("role", "group");
-      node.setAttribute("aria-label", "Pinned capture. Drag to move.");
+      node.setAttribute("aria-label", t("Pinned capture. Drag to move.", "Angeheftete Aufnahme. Zum Verschieben ziehen."));
       Object.assign(node.style, { left: `${rect.x}px`, top: `${rect.y}px`, width: `${rect.w}px`, height: `${rect.h}px` });
       const view = card.frozen.cloneNode(true);
       place(view, rect, 1);
       const close = document.createElement("button");
       close.type = "button";
       close.className = "pin-close";
-      close.setAttribute("aria-label", "Close pin");
+      close.setAttribute("aria-label", t("Close pin", "Pin schließen"));
       close.innerHTML = '<span class="icon" style="--icon:url(assets/icons/x.svg)"></span>';
       close.addEventListener("click", () => node.remove());
       node.append(view, close);
@@ -387,7 +390,7 @@
           { duration: 520, easing: "cubic-bezier(0.34, 1.36, 0.64, 1)" });
       }
       dismiss(card, true);
-      announce("Pinned. Drag the pin to move it.");
+      announce(t("Pinned. Drag the pin to move it.", "Angeheftet. Den Pin zum Verschieben ziehen."));
     }
 
     function wireCard(card) {
@@ -395,8 +398,8 @@
         const control = event.target.closest("[data-action]");
         if (!control || card.classList.contains("is-leaving")) return;
         const action = control.dataset.action;
-        if (action === "copy") confirm(card, control, "Copied");
-        else if (action === "save") confirm(card, control, "Saved");
+        if (action === "copy") confirm(card, control, t("Copied", "Kopiert"));
+        else if (action === "save") confirm(card, control, t("Saved", "Gespeichert"));
         else if (action === "close") dismiss(card);
         else if (action === "pin") pin(card);
         else if (action === "annotate") dismiss(card, true);
@@ -466,7 +469,7 @@
     stage.addEventListener("pointerup", finish);
     stage.addEventListener("pointercancel", () => { if (pending && pending.active) end(); pending = null; });
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && pending && pending.active) { pending = null; end(); announce("Capture cancelled."); }
+      if (event.key === "Escape" && pending && pending.active) { pending = null; end(); announce(t("Capture cancelled.", "Aufnahme abgebrochen.")); }
     });
 
     // The guided capture frames the Lama, the way the app icon does.

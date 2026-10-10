@@ -180,12 +180,24 @@ code, .mono, pre, kbd { font-family: var(--font-mono); font-variant-numeric: tab
 .nav { display: flex; gap: 4px; padding: 4px; border-radius: var(--radius-pill); background: var(--pane); box-shadow: var(--shadow-pane); }
 .nav a { padding: 6px 14px; border-radius: var(--radius-pill); color: var(--ink-muted); font-size: 14px; font-weight: 500; text-decoration: none; }
 .nav a:hover { color: var(--ink); background: var(--pane-hover); }
+.header-end { grid-column: -2; justify-self: end; display: flex; align-items: center; gap: 10px; min-width: 0; }
 .header-release {
-  justify-self: end; display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: 8px;
   padding: 6px 12px; border-radius: var(--radius-pill);
   color: var(--ink-muted); font: 500 12.5px/1 var(--font-mono); text-decoration: none;
   box-shadow: inset 0 0 0 1px var(--line);
 }
+/* The language switch: buttons on pages that translate in place, links
+   to the counterpart on the legal pages. Buttons need JavaScript. */
+.lang-switch { display: inline-flex; flex: none; gap: 2px; padding: 3px; border-radius: var(--radius-pill); box-shadow: inset 0 0 0 1px var(--line); }
+html:not(.js) .lang-switch:has(button) { display: none; }
+.lang-switch a, .lang-switch button {
+  min-width: 34px; padding: 4px 8px; border: 0; border-radius: var(--radius-pill);
+  background: none; color: var(--ink-muted); font: 600 12px/1 var(--font-mono); letter-spacing: 0.04em;
+  text-align: center; text-decoration: none; cursor: pointer;
+}
+.lang-switch a:hover, .lang-switch button:hover { color: var(--ink); background: var(--pane-hover); }
+.lang-switch [aria-pressed="true"], .lang-switch [aria-current] { color: var(--ink); background: var(--pane); box-shadow: var(--shadow-pane); }
 .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 rgba(184, 51, 143, 0.5); animation: pulse 2.4s var(--ease) infinite; }
 @keyframes pulse { 70% { box-shadow: 0 0 0 7px rgba(184, 51, 143, 0); } 100% { box-shadow: 0 0 0 0 rgba(184, 51, 143, 0); } }
 
@@ -226,7 +238,7 @@ code, .mono, pre, kbd { font-family: var(--font-mono); font-variant-numeric: tab
   margin: 0 0 22px; color: var(--brand-ink);
   font-size: clamp(40px, 5vw, 70px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 700;
 }
-.hero h1 span {
+.hero h1 .accent {
   background: linear-gradient(100deg, var(--brand-accent-ink) 10%, var(--prop) 95%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
@@ -764,6 +776,13 @@ code, .mono, pre, kbd { font-family: var(--font-mono); font-variant-numeric: tab
 .release-record { padding-top: 24px; border-top: 1px solid var(--line); }
 .release-record h2 { margin: 0; }
 .release-record > p { margin: 2px 0 10px; font: 12.5px var(--font-mono); color: var(--ink-muted); }
+.legal p, .legal li, .legal address { max-width: 70ch; }
+.legal address { font-style: normal; color: var(--ink-muted); }
+.legal ul { padding-left: 22px; color: var(--ink-muted); }
+.legal li + li { margin-top: 6px; }
+.legal h3 { margin: 22px 0 6px; font-size: 16px; }
+.legal .updated { margin-top: 0; font: 12.5px var(--font-mono); }
+.legal a { overflow-wrap: anywhere; }
 .formats { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 14px; }
 
 /* Reveal on scroll (only with JavaScript; the page reads the same without). */
@@ -794,6 +813,8 @@ code, .mono, pre, kbd { font-family: var(--font-mono); font-variant-numeric: tab
 }
 @media (max-width: 600px) {
   :root { --gutter: 18px; }
+  .site-header { gap: 10px; }
+  .header-release { padding: 6px 10px; }
   .hero { padding: 10px 10px 0; }
   .stage { border-radius: 22px; }
   .stage-content { padding: 40px 22px 120px; }

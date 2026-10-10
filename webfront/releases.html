@@ -3,37 +3,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Release notes · ShotLama</title>
-  <meta name="description" content="ShotLama release notes.">
+  <title data-de="Versionshinweise · ShotLama">Release notes · ShotLama</title>
+  <meta name="description" content="ShotLama release notes." data-de-content="Versionshinweise zu ShotLama.">
   <link rel="canonical" href="https://devmil.de/shotlama/releases.html">
   <meta name="theme-color" content="#ECECF1" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0F0F14" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="assets/brand/icon-32.png" sizes="32x32">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="language.js" defer></script>
   <script src="releases.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-de="Zum Inhalt springen">Skip to content</a>
   <header class="site-header">
-    <a href="index.html" class="brand" aria-label="ShotLama home"><img src="assets/brand/icon-64.png" width="30" height="30" alt="">ShotLama</a>
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html#flow">How it works</a>
-      <a href="index.html#features">Features</a>
-      <a href="index.html#download">Download</a>
+    <a href="index.html" class="brand" aria-label="ShotLama home" data-de-aria-label="ShotLama Startseite"><img src="assets/brand/icon-64.png" width="30" height="30" alt="">ShotLama</a>
+    <nav class="nav" aria-label="Primary" data-de-aria-label="Hauptnavigation">
+      <a href="index.html#flow" data-de="Ablauf">How it works</a>
+      <a href="index.html#features" data-de="Funktionen">Features</a>
+      <a href="index.html#download" data-de="Download">Download</a>
     </nav>
+    <div class="header-end">
+      <div class="lang-switch" role="group" aria-label="Language" data-de-aria-label="Sprache">
+        <button type="button" data-language="en" lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-language="de" lang="de" aria-pressed="false">DE</button>
+      </div>
+    </div>
   </header>
   <main id="main" class="page">
     <div class="island">
-      <p class="eyebrow">Release history</p>
-      <h1>Release notes</h1>
-      <p>These notes come from the same release index as the download links on the home page.</p>
+      <p class="eyebrow" data-de="Versionsgeschichte">Release history</p>
+      <h1 data-de="Versionshinweise">Release notes</h1>
+      <p data-de="Diese Hinweise stammen aus demselben Versionsindex wie die Download-Links auf der Startseite.">These notes come from the same release index as the download links on the home page.</p>
       <div id="release-list" class="release-list" role="status" aria-live="polite">No public release yet. ShotLama is in development.</div>
     </div>
   </main>
   <footer class="site-footer">
-    <div class="footer-brand"><span class="signature" role="img" aria-label="The Lama signature"></span><div><strong>ShotLama</strong><p>A screenshot tool by <a href="https://devmil.de/">Devmil Solutions</a>.</p></div></div>
-    <nav aria-label="Footer"><a href="releases.html" aria-current="page">Release notes</a><a href="privacy.html">Privacy</a></nav>
-    <p>No analytics. No cookies. No tracking scripts.</p>
+    <div class="footer-brand"><span class="signature" role="img" aria-label="The Lama signature" data-de-aria-label="Die Lama-Signatur"></span><div><strong>ShotLama</strong><p><span data-de="Ein Screenshot-Werkzeug von">A screenshot tool by</span> <a href="https://devmil.de/">Devmil Solutions</a>.</p></div></div>
+    <nav aria-label="Footer" data-de-aria-label="Fußzeile"><a href="releases.html" aria-current="page" data-de="Versionshinweise">Release notes</a><a href="imprint.html" data-de-href="de/imprint.html" data-de="Impressum">Imprint</a><a href="privacy.html" data-de-href="de/privacy.html" data-de="Datenschutz">Privacy</a></nav>
+    <p data-de="Keine Analyse. Keine Cookies. Keine Tracking-Skripte.">No analytics. No cookies. No tracking scripts.</p>
   </footer>
 </body>
 </html>
