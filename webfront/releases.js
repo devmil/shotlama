@@ -21,9 +21,9 @@
   const formats = {
     macos: ["dmg"],
     windows: ["msi", "exe"],
-    linux: ["flatpak", "AppImage", "deb", "rpm", "tar.gz"],
+    linux: ["flatpak", "AppImage", "deb", "rpm", "pkg.tar.zst", "tar.gz"],
   };
-  const order = ["dmg", "msi", "exe", "flatpak", "AppImage", "deb", "rpm", "tar.gz"];
+  const order = ["dmg", "msi", "exe", "flatpak", "AppImage", "deb", "rpm", "pkg.tar.zst", "tar.gz"];
   const platforms = {
     macos: { label: "macOS", icon: "apple" },
     windows: { label: "Windows", icon: "windows" },
@@ -37,6 +37,7 @@
     AppImage: { name: ["AppImage", "AppImage"], hint: ["One portable file", "Eine portable Datei"], icon: "platform/appimage" },
     deb: { name: ["DEB package", "DEB-Paket"], hint: ["Debian, Ubuntu and derivatives", "Debian, Ubuntu und Derivate"], icon: "platform/debian" },
     rpm: { name: ["RPM package", "RPM-Paket"], hint: ["Fedora and other RPM-based distributions", "Fedora und andere RPM-basierte Distributionen"], icon: "platform/fedora" },
+    "pkg.tar.zst": { name: ["Arch package", "Arch-Paket"], hint: ["Arch Linux, Omarchy and derivatives (pacman -U)", "Arch Linux, Omarchy und Derivate (pacman -U)"], icon: "icons/package" },
     "tar.gz": { name: ["Tarball", "Tarball"], hint: ["Portable archive", "Portables Archiv"], icon: "platform/archive" },
   };
 
@@ -94,6 +95,7 @@
       const agent = navigator.userAgent || "";
       if (/ubuntu|debian|mint/i.test(agent) && present.includes("deb")) return "deb";
       if (/fedora|red hat|suse/i.test(agent) && present.includes("rpm")) return "rpm";
+      if (/arch|manjaro|endeavour/i.test(agent) && present.includes("pkg.tar.zst")) return "pkg.tar.zst";
     }
     return formats[platform].find((format) => present.includes(format)) || null;
   }
