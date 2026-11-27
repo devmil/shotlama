@@ -1,1 +1,188 @@
-{"schema_version":1,"product":"ShotLama","latest":null,"releases":[]}
+{
+  "latest": {
+    "assets": [
+      {
+        "architecture": "x86_64",
+        "bytes": 43600376,
+        "file": "ShotLama-0.1.0-beta.1-2-linux-x86_64.AppImage",
+        "format": "AppImage",
+        "minimum_system": "glibc 2.39",
+        "platform": "linux",
+        "sha256": "295deac4d9a78b4c40c8bf2f670b586d1d79b2fc216ed8b3b67900bd4f735861",
+        "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-linux-x86_64.AppImage"
+      },
+      {
+        "architecture": "x86_64",
+        "bytes": 46824716,
+        "file": "ShotLama-0.1.0-beta.1-2-linux-x86_64.deb",
+        "format": "deb",
+        "minimum_system": "glibc 2.39",
+        "platform": "linux",
+        "sha256": "7d783acc0025e68ecc1d9abc00043a2cb88bf044c558f79a26d2786a5dcb8965",
+        "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-linux-x86_64.deb"
+      },
+      {
+        "architecture": "x86_64",
+        "bytes": 34997070,
+        "file": "ShotLama-0.1.0-beta.1-2-linux-x86_64.pkg.tar.zst",
+        "format": "pkg.tar.zst",
+        "minimum_system": "glibc 2.39",
+        "platform": "linux",
+        "sha256": "b43bc946d04d6883b9c2c5257cac63644f8e6db9dc33943a744a2b9d010b007f",
+        "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-linux-x86_64.pkg.tar.zst"
+      },
+      {
+        "architecture": "x86_64",
+        "bytes": 35089386,
+        "file": "ShotLama-0.1.0-beta.1-2-linux-x86_64.rpm",
+        "format": "rpm",
+        "minimum_system": "glibc 2.39",
+        "platform": "linux",
+        "sha256": "359b0f898d840e66595262fac3071a4bd878917dd86177c6875eae0d7d0d4bae",
+        "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-linux-x86_64.rpm"
+      },
+      {
+        "architecture": "x86_64",
+        "bytes": 46779974,
+        "file": "ShotLama-0.1.0-beta.1-2-linux-x86_64.tar.gz",
+        "format": "tar.gz",
+        "minimum_system": "glibc 2.39",
+        "platform": "linux",
+        "sha256": "e7a2848a3378118975eced6b4d9128e85c7595cb0d452560231751a5ba0256a6",
+        "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-linux-x86_64.tar.gz"
+      },
+      {
+        "architecture": "universal",
+        "bytes": 73807125,
+        "file": "ShotLama-0.1.0-beta.1-2-macos-universal.dmg",
+        "format": "dmg",
+        "minimum_system": "macOS 14",
+        "platform": "macos",
+        "sha256": "584ce7449d85b6a7197df9f21d246a7445e6789650587903709762cf8b82d002",
+        "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-macos-universal.dmg"
+      },
+      {
+        "architecture": "x86_64",
+        "bytes": 30560043,
+        "file": "ShotLama-0.1.0-beta.1-2-windows-x86_64.msi",
+        "format": "msi",
+        "minimum_system": "Windows 10 1809",
+        "platform": "windows",
+        "sha256": "1fcfcd3705aad3a7adbc6b5d2fa5453f48e1bd04389494f7bf9619d12ecdda10",
+        "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-windows-x86_64.msi"
+      }
+    ],
+    "build": 2,
+    "channel": "beta",
+    "notes": [
+      "First public beta of ShotLama, a local-first screenshot and screen-recording app for macOS, Windows and Linux.",
+      "Capture an area, a window or the whole screen from the tray, a global shortcut or the command line. The frozen-screen overlay has a loupe for pixel-exact selection.",
+      "Every capture lands on a Quick Access card: copy, save, drag it into another app, pin it on top of other windows or open it in the editor.",
+      "Annotate with arrows, shapes, text, highlighter, spotlight, blur or pixelate (Conceal), counters and a background tool, with full undo.",
+      "Copy text out of any screenshot with on-device text recognition, and read QR codes.",
+      "Capture long pages with scrolling capture (Linux).",
+      "Record the screen as video or GIF, with optional microphone, system audio, camera and click highlights, then trim the result in the simple video editor.",
+      "Find earlier captures and recordings in History.",
+      "Features your system cannot provide stay visible but disabled, with a hint about what is missing, for example a GStreamer package on Linux.",
+      "Diagnostics stay in memory. You can turn on detailed diagnostics for a session and review an export before saving or sharing it. Nothing is sent automatically.",
+      "This is a beta: Linux (Wayland and X11) has been tested end to end; macOS and Windows builds are new and not yet widely tested. The Windows installer is not code-signed yet."
+    ],
+    "tag": "v0.1.0-beta.1-2",
+    "version": "0.1.0-beta.1"
+  },
+  "product": "ShotLama",
+  "releases": [
+    {
+      "assets": [
+        {
+          "architecture": "x86_64",
+          "bytes": 43600376,
+          "file": "ShotLama-0.1.0-beta.1-2-linux-x86_64.AppImage",
+          "format": "AppImage",
+          "minimum_system": "glibc 2.39",
+          "platform": "linux",
+          "sha256": "295deac4d9a78b4c40c8bf2f670b586d1d79b2fc216ed8b3b67900bd4f735861",
+          "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-linux-x86_64.AppImage"
+        },
+        {
+          "architecture": "x86_64",
+          "bytes": 46824716,
+          "file": "ShotLama-0.1.0-beta.1-2-linux-x86_64.deb",
+          "format": "deb",
+          "minimum_system": "glibc 2.39",
+          "platform": "linux",
+          "sha256": "7d783acc0025e68ecc1d9abc00043a2cb88bf044c558f79a26d2786a5dcb8965",
+          "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-linux-x86_64.deb"
+        },
+        {
+          "architecture": "x86_64",
+          "bytes": 34997070,
+          "file": "ShotLama-0.1.0-beta.1-2-linux-x86_64.pkg.tar.zst",
+          "format": "pkg.tar.zst",
+          "minimum_system": "glibc 2.39",
+          "platform": "linux",
+          "sha256": "b43bc946d04d6883b9c2c5257cac63644f8e6db9dc33943a744a2b9d010b007f",
+          "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-linux-x86_64.pkg.tar.zst"
+        },
+        {
+          "architecture": "x86_64",
+          "bytes": 35089386,
+          "file": "ShotLama-0.1.0-beta.1-2-linux-x86_64.rpm",
+          "format": "rpm",
+          "minimum_system": "glibc 2.39",
+          "platform": "linux",
+          "sha256": "359b0f898d840e66595262fac3071a4bd878917dd86177c6875eae0d7d0d4bae",
+          "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-linux-x86_64.rpm"
+        },
+        {
+          "architecture": "x86_64",
+          "bytes": 46779974,
+          "file": "ShotLama-0.1.0-beta.1-2-linux-x86_64.tar.gz",
+          "format": "tar.gz",
+          "minimum_system": "glibc 2.39",
+          "platform": "linux",
+          "sha256": "e7a2848a3378118975eced6b4d9128e85c7595cb0d452560231751a5ba0256a6",
+          "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-linux-x86_64.tar.gz"
+        },
+        {
+          "architecture": "universal",
+          "bytes": 73807125,
+          "file": "ShotLama-0.1.0-beta.1-2-macos-universal.dmg",
+          "format": "dmg",
+          "minimum_system": "macOS 14",
+          "platform": "macos",
+          "sha256": "584ce7449d85b6a7197df9f21d246a7445e6789650587903709762cf8b82d002",
+          "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-macos-universal.dmg"
+        },
+        {
+          "architecture": "x86_64",
+          "bytes": 30560043,
+          "file": "ShotLama-0.1.0-beta.1-2-windows-x86_64.msi",
+          "format": "msi",
+          "minimum_system": "Windows 10 1809",
+          "platform": "windows",
+          "sha256": "1fcfcd3705aad3a7adbc6b5d2fa5453f48e1bd04389494f7bf9619d12ecdda10",
+          "url": "https://github.com/devmil/shotlama/releases/download/v0.1.0-beta.1-2/ShotLama-0.1.0-beta.1-2-windows-x86_64.msi"
+        }
+      ],
+      "build": 2,
+      "channel": "beta",
+      "notes": [
+        "First public beta of ShotLama, a local-first screenshot and screen-recording app for macOS, Windows and Linux.",
+        "Capture an area, a window or the whole screen from the tray, a global shortcut or the command line. The frozen-screen overlay has a loupe for pixel-exact selection.",
+        "Every capture lands on a Quick Access card: copy, save, drag it into another app, pin it on top of other windows or open it in the editor.",
+        "Annotate with arrows, shapes, text, highlighter, spotlight, blur or pixelate (Conceal), counters and a background tool, with full undo.",
+        "Copy text out of any screenshot with on-device text recognition, and read QR codes.",
+        "Capture long pages with scrolling capture (Linux).",
+        "Record the screen as video or GIF, with optional microphone, system audio, camera and click highlights, then trim the result in the simple video editor.",
+        "Find earlier captures and recordings in History.",
+        "Features your system cannot provide stay visible but disabled, with a hint about what is missing, for example a GStreamer package on Linux.",
+        "Diagnostics stay in memory. You can turn on detailed diagnostics for a session and review an export before saving or sharing it. Nothing is sent automatically.",
+        "This is a beta: Linux (Wayland and X11) has been tested end to end; macOS and Windows builds are new and not yet widely tested. The Windows installer is not code-signed yet."
+      ],
+      "tag": "v0.1.0-beta.1-2",
+      "version": "0.1.0-beta.1"
+    }
+  ],
+  "schema_version": 1
+}
